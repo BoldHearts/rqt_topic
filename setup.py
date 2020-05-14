@@ -28,7 +28,8 @@ setup(
         'Topic :: Software Development',
     ],
     description=(
-        'RQT plugin for monitoring ROS processes.'
+        'rqt_topic provides a GUI plugin for displaying debug information about ROS ' +
+        'topics including publishers, subscribers, publishing rate, and ROS Messages.'
     ),
     license='BSD',
     entry_points={
