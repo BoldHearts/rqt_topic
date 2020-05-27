@@ -374,6 +374,14 @@ class TopicWidget(QWidget):
         if item is None:
             return
 
+        pkg_name = 'rqt_topic'
+        _, package_path = get_resource('packages', pkg_name)
+        icon_paths = QIcon.themeSearchPaths()
+        icon_paths.append(os.path.join(
+            package_path, 'share', pkg_name, 'resource', 'icons', 'rqt_icons'))
+        QIcon.setThemeSearchPaths(icon_paths)
+        QIcon.setThemeName('rqt_icons')
+
         # show context menu
         menu = QMenu(self)
         action_item_expand = menu.addAction(QIcon.fromTheme('zoom-in'), 'Expand All Children')
